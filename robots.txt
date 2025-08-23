@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow search engines to crawl the site
+# Block only admin and sensitive areas
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-content/themes/*/
+Allow: /wp-content/themes/*/assets/
+Allow: /wp-content/themes/*/css/
+Allow: /wp-content/themes/*/js/
+Allow: /wp-content/themes/*/images/
+
+# Allow important files
+Allow: /wp-content/uploads/
+
+# Sitemap location (add this when you have a sitemap)
+# Sitemap: https://yourdomain.com/sitemap.xml
