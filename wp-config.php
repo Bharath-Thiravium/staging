@@ -79,6 +79,10 @@ $table_prefix = 'wp_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+// Force WordPress URLs to production domain
+define('WP_HOME', 'https://athenas.co.in');
+define('WP_SITEURL', 'https://athenas.co.in');
+
 
 
 /**
