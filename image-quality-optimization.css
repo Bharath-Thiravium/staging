@@ -1,0 +1,201 @@
+/* 
+ * Image Quality & Visibility Optimization
+ * Fixes hover-only visibility and improves image quality
+ * Performance-optimized for SEO and speed
+ */
+
+/* ===== SERVICE LOGOS SECTION OPTIMIZATION ===== */
+
+/* Target the specific "Our Service Extant" section */
+.elementor-element-660bd0ca .elementor-widget-image img {
+    /* Ensure all images are always visible */
+    opacity: 1 !important;
+    visibility: visible !important;
+    
+    /* High-quality image rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: optimize-quality;
+    
+    /* Smooth transitions for better UX */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Remove any blur or low-quality filters */
+    filter: none !important;
+    
+    /* Ensure proper sizing and aspect ratio */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    
+    /* Add subtle enhancement for better visibility */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Enhanced hover effects (instead of visibility toggle) */
+.elementor-element-660bd0ca .elementor-widget-image:hover img {
+    /* Subtle scale effect for interactivity */
+    transform: scale(1.05);
+    
+    /* Add subtle shadow for depth */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    
+    /* Slight brightness increase for engagement */
+    filter: brightness(1.1) contrast(1.05);
+}
+
+/* ===== SPECIFIC IMAGE OPTIMIZATIONS ===== */
+
+/* Large Ashok Leyland logo optimization */
+.elementor-element-1b3e594d img {
+    /* Ensure high-quality rendering for large image */
+    image-rendering: -webkit-optimize-contrast;
+    max-width: 200px; /* Optimize size for performance */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Square logos optimization */
+.elementor-element-4da0a138 img,
+.elementor-element-1638936d img,
+.elementor-element-37757040 img {
+    /* Perfect square aspect ratio */
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    max-width: 150px;
+    height: auto;
+}
+
+/* Rectangular logos optimization */
+.elementor-element-5fb8adb1 img,
+.elementor-element-7dfc5f7 img,
+.elementor-element-fed3082 img {
+    /* Maintain aspect ratio for rectangular logos */
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Lazy loading optimization */
+.elementor-element-660bd0ca img[loading="lazy"] {
+    /* Ensure smooth loading transition */
+    transition: opacity 0.3s ease;
+}
+
+/* WebP format optimization */
+.elementor-element-660bd0ca img[src$=".webp"] {
+    /* Enhanced rendering for WebP images */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* PNG format optimization */
+.elementor-element-660bd0ca img[src$=".png"] {
+    /* Crisp rendering for PNG logos */
+    image-rendering: crisp-edges;
+}
+
+/* ===== RESPONSIVE OPTIMIZATIONS ===== */
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .elementor-element-660bd0ca .elementor-widget-image img {
+        max-width: 120px;
+        margin: 10px;
+    }
+    
+    /* Reduce hover effects on mobile for performance */
+    .elementor-element-660bd0ca .elementor-widget-image:hover img {
+        transform: scale(1.02);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .elementor-element-660bd0ca .elementor-widget-image img {
+        max-width: 150px;
+    }
+}
+
+/* Desktop optimization */
+@media (min-width: 1025px) {
+    .elementor-element-660bd0ca .elementor-widget-image img {
+        max-width: 180px;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Focus states for keyboard navigation */
+.elementor-element-660bd0ca .elementor-widget-image:focus img,
+.elementor-element-660bd0ca .elementor-widget-image:focus-within img {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+    transform: scale(1.05);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .elementor-element-660bd0ca .elementor-widget-image img {
+        filter: contrast(1.2);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .elementor-element-660bd0ca .elementor-widget-image img {
+        transition: none;
+    }
+    
+    .elementor-element-660bd0ca .elementor-widget-image:hover img {
+        transform: none;
+    }
+}
+
+/* ===== SECTION TITLE OPTIMIZATION ===== */
+
+/* Fix the typo in "Our Service Extant" if needed */
+.elementor-element-38e6ca71 .elementor-heading-title {
+    /* Ensure proper typography */
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ===== CONTAINER LAYOUT OPTIMIZATION ===== */
+
+/* Improve grid layout for logos */
+.elementor-element-660bd0ca .e-con-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Individual logo containers */
+.elementor-element-660bd0ca .elementor-widget-image {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+/* ===== PERFORMANCE HINTS ===== */
+
+/* GPU acceleration for smooth animations */
+.elementor-element-660bd0ca .elementor-widget-image img {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Optimize repaints */
+.elementor-element-660bd0ca .elementor-widget-image:hover img {
+    will-change: transform, filter, box-shadow;
+}
