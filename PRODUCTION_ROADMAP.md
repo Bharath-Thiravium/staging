@@ -7,7 +7,7 @@
 ## 🥇 **Phase 1: Complete Performance Optimization** (CURRENT)
 
 ### 🚨 Critical SEO Issues (Do First!)
-- [ ] **Fix WordPress `blog_public` setting** - Check: https://staging.athenas.co.in/check_blog_public.php
+- [ ] **Fix WordPress `blog_public` setting** - Check: https://athenas.co.in/check_blog_public.php
 - [ ] **Verify indexing unblocked** - Re-run PageSpeed Insights
 - [ ] **Fix non-crawlable links** - Ensure proper HTML anchor tags
 - [ ] **Improve link descriptive text** - Replace "click here" with descriptive text

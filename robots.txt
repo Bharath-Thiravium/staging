@@ -16,5 +16,5 @@ Allow: /wp-content/themes/*/images/
 # Allow important files
 Allow: /wp-content/uploads/
 
-# Sitemap location (add this when you have a sitemap)
-# Sitemap: https://yourdomain.com/sitemap.xml
+# Sitemap location
+Sitemap: https://athenas.co.in/sitemap.xml

@@ -13,7 +13,7 @@ Your "Our Service Extant" section has images that are:
 ## 🥇 **Method 1: Automated Fix (Recommended)**
 
 ### Step 1: Run the Optimization Script
-1. Open your browser and go to: `https://staging.athenas.co.in/apply-image-optimizations.php`
+1. Open your browser and go to: `https://athenas.co.in/apply-image-optimizations.php`
 2. The script will automatically apply all optimizations
 3. Clear all caches after completion
 

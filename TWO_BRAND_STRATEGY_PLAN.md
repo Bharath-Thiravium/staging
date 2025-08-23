@@ -29,13 +29,13 @@ You are operating **TWO FUNDAMENTALLY DIFFERENT BUSINESSES** under one confused 
 ### **Step 1: Domain & Hosting Strategy**
 ```
 Current Setup:
-├── staging.athenas.co.in (staging environment)
-└── athenas.co.in (content licensing - keep)
+├── athenas.co.in (main production site)
+└── Local development environment
 
 New Setup:
 ├── athenas.co.in (Content Licensing Business)
 ├── athenasbusiness.co.in (Professional Services)
-├── staging.athenas.co.in (development)
+├── Local development environment
 └── staging.athenasbusiness.co.in (business services staging)
 ```
 
