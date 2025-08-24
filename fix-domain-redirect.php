@@ -27,7 +27,7 @@ echo "<style>
 echo "</head><body>";
 
 echo "<h1>🔧 Fix Domain Redirect Issue</h1>";
-echo "<p><strong>This tool will identify and fix the redirection from staging.athenas.co.in to athenas.co.in</strong></p>";
+echo "<p><strong>This tool will identify and fix the redirection from athenas.co.in to athenas.co.in</strong></p>";
 
 global $wpdb;
 
@@ -43,7 +43,7 @@ echo "<h3>📋 Current WordPress Settings:</h3>";
 echo "<table>";
 echo "<tr><th>Setting</th><th>Current Value</th><th>Status</th></tr>";
 echo "<tr><td><strong>Site URL (siteurl)</strong></td><td>{$site_url}</td>";
-if (strpos($site_url, 'staging.athenas.co.in') !== false) {
+if (strpos($site_url, 'athenas.co.in') !== false) {
     echo "<td style='color:red;'>❌ Needs Fix</td>";
 } else {
     echo "<td style='color:green;'>✅ Correct</td>";
@@ -51,7 +51,7 @@ if (strpos($site_url, 'staging.athenas.co.in') !== false) {
 echo "</tr>";
 
 echo "<tr><td><strong>Home URL (home)</strong></td><td>{$home_url}</td>";
-if (strpos($home_url, 'staging.athenas.co.in') !== false) {
+if (strpos($home_url, 'athenas.co.in') !== false) {
     echo "<td style='color:red;'>❌ Needs Fix</td>";
 } else {
     echo "<td style='color:green;'>✅ Correct</td>";
@@ -71,7 +71,7 @@ $staging_urls_found = [];
 $options_with_staging = $wpdb->get_results("
     SELECT option_name, option_value 
     FROM {$wpdb->options} 
-    WHERE option_value LIKE '%staging.athenas.co.in%'
+    WHERE option_value LIKE '%athenas.co.in%'
     LIMIT 20
 ");
 
@@ -96,7 +96,7 @@ if (!empty($options_with_staging)) {
 $posts_with_staging = $wpdb->get_results("
     SELECT ID, post_title, post_type 
     FROM {$wpdb->posts} 
-    WHERE post_content LIKE '%staging.athenas.co.in%'
+    WHERE post_content LIKE '%athenas.co.in%'
     AND post_status = 'publish'
     LIMIT 10
 ");
@@ -121,7 +121,7 @@ if (!empty($posts_with_staging)) {
 $meta_with_staging = $wpdb->get_results("
     SELECT post_id, meta_key 
     FROM {$wpdb->postmeta} 
-    WHERE meta_value LIKE '%staging.athenas.co.in%'
+    WHERE meta_value LIKE '%athenas.co.in%'
     LIMIT 10
 ");
 
@@ -147,10 +147,10 @@ echo "<h2>🔍 Step 3: Server Configuration Check</h2>";
 $htaccess_path = ABSPATH . '.htaccess';
 if (file_exists($htaccess_path)) {
     $htaccess_content = file_get_contents($htaccess_path);
-    if (strpos($htaccess_content, 'staging.athenas.co.in') !== false) {
+    if (strpos($htaccess_content, 'athenas.co.in') !== false) {
         echo "<div class='error'>";
         echo "<h3>🚨 Found staging URLs in .htaccess file!</h3>";
-        echo "<p>The .htaccess file contains redirects to staging.athenas.co.in</p>";
+        echo "<p>The .htaccess file contains redirects to athenas.co.in</p>";
         echo "</div>";
     } else {
         echo "<div class='success'>";
@@ -251,8 +251,8 @@ if (isset($_POST['fix_urls'])) {
     // Update post content
     $posts_updated = $wpdb->query("
         UPDATE {$wpdb->posts} 
-        SET post_content = REPLACE(post_content, 'staging.athenas.co.in', 'athenas.co.in')
-        WHERE post_content LIKE '%staging.athenas.co.in%'
+        SET post_content = REPLACE(post_content, 'athenas.co.in', 'athenas.co.in')
+        WHERE post_content LIKE '%athenas.co.in%'
     ");
     
     if ($posts_updated > 0) {
@@ -262,8 +262,8 @@ if (isset($_POST['fix_urls'])) {
     // Update post meta
     $meta_updated = $wpdb->query("
         UPDATE {$wpdb->postmeta} 
-        SET meta_value = REPLACE(meta_value, 'staging.athenas.co.in', 'athenas.co.in')
-        WHERE meta_value LIKE '%staging.athenas.co.in%'
+        SET meta_value = REPLACE(meta_value, 'athenas.co.in', 'athenas.co.in')
+        WHERE meta_value LIKE '%athenas.co.in%'
     ");
     
     if ($meta_updated > 0) {
@@ -273,8 +273,8 @@ if (isset($_POST['fix_urls'])) {
     // Update options
     $options_updated = $wpdb->query("
         UPDATE {$wpdb->options} 
-        SET option_value = REPLACE(option_value, 'staging.athenas.co.in', 'athenas.co.in')
-        WHERE option_value LIKE '%staging.athenas.co.in%'
+        SET option_value = REPLACE(option_value, 'athenas.co.in', 'athenas.co.in')
+        WHERE option_value LIKE '%athenas.co.in%'
         AND option_name NOT IN ('home', 'siteurl')
     ");
     
@@ -292,7 +292,7 @@ if (isset($_POST['fix_urls'])) {
     echo "<form method='post'>";
     echo "<button type='submit' name='fix_urls' style='background:#0073aa;color:white;padding:15px 30px;border:none;border-radius:5px;font-size:16px;cursor:pointer;'>🔧 Fix Database URLs Now</button>";
     echo "</form>";
-    echo "<p><em>This will replace all instances of 'staging.athenas.co.in' with 'athenas.co.in' in your WordPress database.</em></p>";
+    echo "<p><em>This will replace all instances of 'athenas.co.in' with 'athenas.co.in' in your WordPress database.</em></p>";
 }
 echo "</div>";
 

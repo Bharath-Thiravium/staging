@@ -25,8 +25,8 @@ echo "<p><strong>Site URL:</strong> {$current_siteurl}</p>";
 echo "</div>";
 
 // Check if URLs need fixing
-$needs_fix = (strpos($current_home, 'staging.athenas.co.in') !== false) || 
-             (strpos($current_siteurl, 'staging.athenas.co.in') !== false);
+$needs_fix = (strpos($current_home, 'athenas.co.in') !== false) || 
+             (strpos($current_siteurl, 'athenas.co.in') !== false);
 
 if ($needs_fix) {
     echo "<div class='error'>";
@@ -85,7 +85,7 @@ echo "<h3>🔍 Searching for remaining staging URLs...</h3>";
 
 $staging_count = $wpdb->get_var("
     SELECT COUNT(*) FROM {$wpdb->options} 
-    WHERE option_value LIKE '%staging.athenas.co.in%'
+    WHERE option_value LIKE '%athenas.co.in%'
 ");
 
 if ($staging_count > 0) {
@@ -94,8 +94,8 @@ if ($staging_count > 0) {
     
     $fixed = $wpdb->query("
         UPDATE {$wpdb->options} 
-        SET option_value = REPLACE(option_value, 'staging.athenas.co.in', 'athenas.co.in')
-        WHERE option_value LIKE '%staging.athenas.co.in%'
+        SET option_value = REPLACE(option_value, 'athenas.co.in', 'athenas.co.in')
+        WHERE option_value LIKE '%athenas.co.in%'
     ");
     
     echo "<p>✅ Fixed {$fixed} database entries</p>";
