@@ -27,7 +27,7 @@ echo "<style>
 echo "</head><body>";
 
 echo "<h1>🔧 Fix Domain Redirect Issue</h1>";
-echo "<p><strong>This tool will identify and fix the redirection from athenas.co.in to athenas.co.in</strong></p>";
+echo "<p><strong>This tool will identify and fix the redirection from staging.athenas.co.in to athenas.co.in</strong></p>";
 
 global $wpdb;
 
@@ -250,9 +250,9 @@ if (isset($_POST['fix_urls'])) {
     
     // Update post content
     $posts_updated = $wpdb->query("
-        UPDATE {$wpdb->posts} 
-        SET post_content = REPLACE(post_content, 'athenas.co.in', 'athenas.co.in')
-        WHERE post_content LIKE '%athenas.co.in%'
+        UPDATE {$wpdb->posts}
+        SET post_content = REPLACE(post_content, 'staging.athenas.co.in', 'athenas.co.in')
+        WHERE post_content LIKE '%staging.athenas.co.in%'
     ");
     
     if ($posts_updated > 0) {
@@ -261,9 +261,9 @@ if (isset($_POST['fix_urls'])) {
     
     // Update post meta
     $meta_updated = $wpdb->query("
-        UPDATE {$wpdb->postmeta} 
-        SET meta_value = REPLACE(meta_value, 'athenas.co.in', 'athenas.co.in')
-        WHERE meta_value LIKE '%athenas.co.in%'
+        UPDATE {$wpdb->postmeta}
+        SET meta_value = REPLACE(meta_value, 'staging.athenas.co.in', 'athenas.co.in')
+        WHERE meta_value LIKE '%staging.athenas.co.in%'
     ");
     
     if ($meta_updated > 0) {
@@ -272,9 +272,9 @@ if (isset($_POST['fix_urls'])) {
     
     // Update options
     $options_updated = $wpdb->query("
-        UPDATE {$wpdb->options} 
-        SET option_value = REPLACE(option_value, 'athenas.co.in', 'athenas.co.in')
-        WHERE option_value LIKE '%athenas.co.in%'
+        UPDATE {$wpdb->options}
+        SET option_value = REPLACE(option_value, 'staging.athenas.co.in', 'athenas.co.in')
+        WHERE option_value LIKE '%staging.athenas.co.in%'
         AND option_name NOT IN ('home', 'siteurl')
     ");
     
@@ -292,7 +292,7 @@ if (isset($_POST['fix_urls'])) {
     echo "<form method='post'>";
     echo "<button type='submit' name='fix_urls' style='background:#0073aa;color:white;padding:15px 30px;border:none;border-radius:5px;font-size:16px;cursor:pointer;'>🔧 Fix Database URLs Now</button>";
     echo "</form>";
-    echo "<p><em>This will replace all instances of 'athenas.co.in' with 'athenas.co.in' in your WordPress database.</em></p>";
+    echo "<p><em>This will replace all instances of 'staging.athenas.co.in' with 'athenas.co.in' in your WordPress database.</em></p>";
 }
 echo "</div>";
 

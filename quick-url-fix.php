@@ -84,8 +84,8 @@ global $wpdb;
 echo "<h3>🔍 Searching for remaining staging URLs...</h3>";
 
 $staging_count = $wpdb->get_var("
-    SELECT COUNT(*) FROM {$wpdb->options} 
-    WHERE option_value LIKE '%athenas.co.in%'
+    SELECT COUNT(*) FROM {$wpdb->options}
+    WHERE option_value LIKE '%staging.athenas.co.in%'
 ");
 
 if ($staging_count > 0) {
@@ -93,9 +93,9 @@ if ($staging_count > 0) {
     echo "<p>Found {$staging_count} options with staging URLs. Fixing...</p>";
     
     $fixed = $wpdb->query("
-        UPDATE {$wpdb->options} 
-        SET option_value = REPLACE(option_value, 'athenas.co.in', 'athenas.co.in')
-        WHERE option_value LIKE '%athenas.co.in%'
+        UPDATE {$wpdb->options}
+        SET option_value = REPLACE(option_value, 'staging.athenas.co.in', 'athenas.co.in')
+        WHERE option_value LIKE '%staging.athenas.co.in%'
     ");
     
     echo "<p>✅ Fixed {$fixed} database entries</p>";
