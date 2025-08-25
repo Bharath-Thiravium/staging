@@ -1,0 +1,106 @@
+# WordPress Core Files
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup*/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/debug.log
+
+# Backup Files (All in One WP Migration and others)
+wp-content/ai1wm-backups/
+*.wpress
+*.zip
+*.tar.gz
+*.sql
+*.sql.gz
+
+# Cache Files
+wp-content/cache/
+wp-content/litespeed/cache/
+wp-content/w3tc-config/
+wp-content/object-cache.php
+
+# Log Files
+*.log
+error_log
+debug.log
+wp-content/debug.log
+
+# Temporary Files
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js (if using)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Composer (if using)
+vendor/
+composer.lock
+
+# Environment Files
+.env
+.env.local
+.env.production
+
+# Large Media Files (use Git LFS instead)
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+*.mkv
+
+# Large Archive Files
+*.rar
+*.7z
+*.tar
+*.gz
+*.bz2
+
+# WordPress Specific
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/upgrade/
+
+# Plugin and Theme Development
+*.orig
+*.rej
+.sass-cache/
+.grunt/
+.bower_components/
+
+# Security
+.htaccess.bak
+wp-config-sample.php
+readme.html
+license.txt
+
+# Optimization Files
+wp-content/litespeed/
+wp-content/cache/
+wp-content/et-cache/
+wp-content/w3tc/
+
+# Backup and Migration Tools
+wp-content/ai1wm-backups/
+wp-content/updraft/
+wp-content/backwpup*/
+wp-content/backup*/
