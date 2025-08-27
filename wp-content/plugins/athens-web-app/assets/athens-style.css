@@ -1,0 +1,474 @@
+/* Athens Web App Integration Styles - Matching Homepage Design */
+
+/* Athens Brand Colors */
+:root {
+    --athens-primary: #0073aa;
+    --athens-primary-dark: #005177;
+    --athens-secondary: #28a745;
+    --athens-secondary-dark: #218838;
+    --athens-accent: #17a2b8;
+    --athens-text: #333333;
+    --athens-text-light: #666666;
+    --athens-bg-light: #f8f9fa;
+    --athens-bg-white: #ffffff;
+    --athens-border: #e1e5e9;
+    --athens-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --athens-shadow-hover: 0 8px 15px rgba(0,0,0,0.15);
+    --athens-radius: 8px;
+    --athens-transition: all 0.3s ease;
+}
+
+/* Athens Menu Item Styling */
+.athens-menu-item {
+    position: relative;
+}
+
+.athens-portal-link {
+    background: linear-gradient(135deg, var(--athens-primary) 0%, var(--athens-primary-dark) 100%);
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: var(--athens-radius);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--athens-transition);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    box-shadow: var(--athens-shadow);
+}
+
+.athens-portal-link:hover {
+    background: linear-gradient(135deg, var(--athens-primary-dark) 0%, #003d5c 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--athens-shadow-hover);
+    color: white !important;
+}
+
+/* Athens Dashboard Styles */
+.athens-web-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--athens-bg-light);
+    min-height: 100vh;
+}
+
+.athens-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--athens-primary) 0%, var(--athens-primary-dark) 100%);
+    border-radius: 12px;
+    color: white;
+    box-shadow: var(--athens-shadow);
+}
+
+.athens-dashboard-header h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.athens-dashboard-header .athens-brand {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.athens-user-avatar img {
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.3);
+    transition: var(--athens-transition);
+}
+
+.athens-user-avatar img:hover {
+    border-color: rgba(255,255,255,0.6);
+    transform: scale(1.05);
+}
+
+.athens-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.athens-stat-card {
+    background: var(--athens-bg-white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--athens-shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--athens-transition);
+    border-left: 4px solid var(--athens-primary);
+}
+
+.athens-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--athens-shadow-hover);
+}
+
+.athens-stat-card.accounting {
+    border-left-color: var(--athens-primary);
+}
+
+.athens-stat-card.hr {
+    border-left-color: var(--athens-secondary);
+}
+
+.athens-stat-card.compliance {
+    border-left-color: var(--athens-accent);
+}
+
+.athens-stat-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    background: linear-gradient(135deg, var(--athens-primary) 0%, var(--athens-primary-dark) 100%);
+}
+
+.athens-stat-content h3 {
+    margin: 0 0 8px 0;
+    color: var(--athens-text-light);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.athens-stat-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--athens-text);
+    margin: 0;
+    line-height: 1;
+}
+
+.athens-dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.athens-dashboard-section {
+    background: var(--athens-bg-white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--athens-shadow);
+    margin-bottom: 25px;
+}
+
+.athens-dashboard-section h3 {
+    margin: 0 0 25px 0;
+    color: var(--athens-primary);
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--athens-border);
+    padding-bottom: 15px;
+}
+
+.athens-activity-item, .athens-notification-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--athens-border);
+    transition: var(--athens-transition);
+}
+
+.athens-activity-item:hover, .athens-notification-item:hover {
+    background: var(--athens-bg-light);
+    margin: 0 -15px;
+    padding: 20px 15px;
+    border-radius: var(--athens-radius);
+}
+
+.athens-activity-item:last-child, .athens-notification-item:last-child {
+    border-bottom: none;
+}
+
+.athens-activity-icon, .athens-notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--athens-primary);
+    color: white;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.athens-activity-content p, .athens-notification-content p {
+    margin: 0 0 5px 0;
+    color: var(--athens-text);
+    font-weight: 500;
+}
+
+.athens-activity-time, .athens-notification-time {
+    font-size: 12px;
+    color: var(--athens-text-light);
+    font-weight: 400;
+}
+
+.athens-notification-item.unread {
+    background: rgba(0,115,170,0.05);
+    border-left: 3px solid var(--athens-primary);
+    padding-left: 17px;
+}
+
+.athens-action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.athens-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: var(--athens-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--athens-transition);
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+}
+
+.athens-action-btn.primary {
+    background: linear-gradient(135deg, var(--athens-primary) 0%, var(--athens-primary-dark) 100%);
+    color: white;
+}
+
+.athens-action-btn.primary:hover {
+    background: linear-gradient(135deg, var(--athens-primary-dark) 0%, #003d5c 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--athens-shadow);
+}
+
+.athens-action-btn.secondary {
+    background: linear-gradient(135deg, var(--athens-secondary) 0%, var(--athens-secondary-dark) 100%);
+    color: white;
+}
+
+.athens-action-btn.secondary:hover {
+    background: linear-gradient(135deg, var(--athens-secondary-dark) 0%, #1e7e34 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--athens-shadow);
+}
+
+.athens-action-btn.tertiary {
+    background: linear-gradient(135deg, var(--athens-accent) 0%, #138496 100%);
+    color: white;
+}
+
+.athens-action-btn.tertiary:hover {
+    background: linear-gradient(135deg, #138496 0%, #117a8b 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--athens-shadow);
+}
+
+.athens-progress-item {
+    margin-bottom: 20px;
+}
+
+.athens-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.athens-progress-header span:first-child {
+    font-weight: 600;
+    color: var(--athens-text);
+}
+
+.athens-progress-header span:last-child {
+    font-weight: 700;
+    color: var(--athens-primary);
+}
+
+.athens-progress-bar {
+    height: 8px;
+    background: var(--athens-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.athens-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--athens-primary) 0%, var(--athens-secondary) 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Athens Login Styles */
+.athens-login-required, .athens-already-logged {
+    text-align: center;
+    padding: 60px 40px;
+    background: var(--athens-bg-white);
+    border-radius: 12px;
+    box-shadow: var(--athens-shadow);
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.athens-login-required h3, .athens-already-logged h3 {
+    color: var(--athens-primary);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.athens-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: var(--athens-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--athens-transition);
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.athens-btn-primary {
+    background: linear-gradient(135deg, var(--athens-primary) 0%, var(--athens-primary-dark) 100%);
+    color: white;
+}
+
+.athens-btn-primary:hover {
+    background: linear-gradient(135deg, var(--athens-primary-dark) 0%, #003d5c 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--athens-shadow);
+    color: white;
+}
+
+.athens-btn-secondary {
+    background: transparent;
+    color: var(--athens-primary);
+    border: 2px solid var(--athens-primary);
+}
+
+.athens-btn-secondary:hover {
+    background: var(--athens-primary);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .athens-dashboard-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .athens-dashboard-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .athens-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .athens-action-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .athens-portal-link {
+        padding: 8px 16px !important;
+        font-size: 14px;
+    }
+}
+
+/* Athens Search Styles */
+.athens-search-container {
+    background: var(--athens-bg-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--athens-shadow);
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.athens-search-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.athens-search-input {
+    padding: 15px 20px;
+    border: 2px solid var(--athens-border);
+    border-radius: var(--athens-radius);
+    font-size: 16px;
+    transition: var(--athens-transition);
+}
+
+.athens-search-input:focus {
+    outline: none;
+    border-color: var(--athens-primary);
+    box-shadow: 0 0 0 3px rgba(0,115,170,0.1);
+}
+
+.athens-search-btn {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, var(--athens-primary) 0%, var(--athens-primary-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: var(--athens-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--athens-transition);
+}
+
+.athens-search-btn:hover {
+    background: linear-gradient(135deg, var(--athens-primary-dark) 0%, #003d5c 100%);
+    transform: translateY(-2px);
+}
+
+.athens-search-results {
+    margin-top: 30px;
+}
+
+.athens-search-result {
+    padding: 20px;
+    border: 1px solid var(--athens-border);
+    border-radius: var(--athens-radius);
+    margin-bottom: 15px;
+    transition: var(--athens-transition);
+}
+
+.athens-search-result:hover {
+    box-shadow: var(--athens-shadow);
+    transform: translateY(-2px);
+}
+
+.athens-search-result h4 {
+    color: var(--athens-primary);
+    margin: 0 0 10px 0;
+}
+
+.athens-search-result p {
+    color: var(--athens-text-light);
+    margin: 0;
+}
