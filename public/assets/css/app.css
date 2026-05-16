@@ -1,1 +1,24 @@
-/* Custom styles — add your overrides here */
+/* ── Fade-in-up animation (mirrors Elementor fadeInUp) ── */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out both;
+    animation-delay: 0.3s;
+}
+
+/* ── Prose fallback (for WP content rendered without typography plugin) ── */
+.prose h1, .prose h2, .prose h3, .prose h4 { font-weight: 700; margin-bottom: 0.5rem; color: #111827; }
+.prose h1 { font-size: 2rem; }
+.prose h2 { font-size: 1.5rem; }
+.prose h3 { font-size: 1.25rem; }
+.prose h4 { font-size: 1.1rem; }
+.prose p  { margin-bottom: 1rem; color: #4B5563; line-height: 1.75; }
+.prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #4B5563; }
+.prose a  { color: #2563EB; text-decoration: underline; }
+
+/* ── Nav dropdown hover fix for touch devices ── */
+@media (hover: none) {
+    .group:focus-within > ul { opacity: 1; visibility: visible; }
+}
