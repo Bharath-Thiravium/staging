@@ -1,0 +1,20 @@
+# Environment
+config/.env
+
+# Cache & Logs
+cache/*.cache
+logs/*.log
+
+# WordPress (deploy separately or keep in repo — your choice)
+# wp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+
+# Large files - excluded from git
+*.sql
+wp-content/ai1wm-backups/
