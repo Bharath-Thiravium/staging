@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "bmewburn.vscode-intelephense-client",
+        "bradlc.vscode-tailwindcss",
+        "mikestead.dotenv",
+        "EditorTeam.editorconfig"
+    ]
+}

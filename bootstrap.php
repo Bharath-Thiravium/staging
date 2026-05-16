@@ -3,16 +3,25 @@
 require_once __DIR__ . '/config/app.php';
 
 // Autoloader — maps App\Foo\Bar → app/Foo/Bar.php
+// Also maps App\Modules\X → modules/x/ (legacy view folder)
 spl_autoload_register(function (string $class): void {
-    $map = [
-        'App\\' => ROOT_PATH . '/app/',
-    ];
-    foreach ($map as $prefix => $base) {
-        if (!str_starts_with($class, $prefix)) continue;
-        $file = $base . str_replace('\\', '/', substr($class, strlen($prefix))) . '.php';
-        if (file_exists($file)) require_once $file;
-    }
+    $prefix = 'App\\';
+    if (!str_starts_with($class, $prefix)) return;
+    $relative = str_replace('\\', '/', substr($class, strlen($prefix)));
+    $file = ROOT_PATH . '/app/' . $relative . '.php';
+    if (file_exists($file)) require_once $file;
 });
+
+// Global helpers
+function esc(mixed $value): string
+{
+    return htmlspecialchars((string) $value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+
+function asset(string $path): string
+{
+    return APP_URL . '/assets/' . ltrim($path, '/');
+}
 
 // Error handling
 if (APP_DEBUG) {
